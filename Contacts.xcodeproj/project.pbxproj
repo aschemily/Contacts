@@ -9,21 +9,28 @@
 /* Begin PBXBuildFile section */
 		32BCB4BD27D1723000D22E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCB4BC27D1723000D22E3C /* AppDelegate.swift */; };
 		32BCB4BF27D1723000D22E3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCB4BE27D1723000D22E3C /* SceneDelegate.swift */; };
-		32BCB4C127D1723000D22E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCB4C027D1723000D22E3C /* ViewController.swift */; };
 		32BCB4C427D1723000D22E3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BCB4C227D1723000D22E3C /* Main.storyboard */; };
 		32BCB4C627D1723200D22E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32BCB4C527D1723200D22E3C /* Assets.xcassets */; };
 		32BCB4C927D1723200D22E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BCB4C727D1723200D22E3C /* LaunchScreen.storyboard */; };
+		32BCB4D327D1730200D22E3C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BCB4D227D1730200D22E3C /* CloudKit.framework */; };
+		32BCB4D927D1752600D22E3C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCB4D827D1752600D22E3C /* Contact.swift */; };
+		32BCB4DB27D17BDB00D22E3C /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCB4DA27D17BDA00D22E3C /* ContactController.swift */; };
+		32BCB4DE27D17BFA00D22E3C /* ContactListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCB4DD27D17BFA00D22E3C /* ContactListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32BCB4B927D1723000D22E3C /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32BCB4BC27D1723000D22E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32BCB4BE27D1723000D22E3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		32BCB4C027D1723000D22E3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		32BCB4C327D1723000D22E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32BCB4C527D1723200D22E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32BCB4C827D1723200D22E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32BCB4CA27D1723200D22E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32BCB4D027D172FD00D22E3C /* Contacts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Contacts.entitlements; sourceTree = "<group>"; };
+		32BCB4D227D1730200D22E3C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		32BCB4D827D1752600D22E3C /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		32BCB4DA27D17BDA00D22E3C /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
+		32BCB4DD27D17BFA00D22E3C /* ContactListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BCB4D327D1730200D22E3C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +50,7 @@
 			children = (
 				32BCB4BB27D1723000D22E3C /* Contacts */,
 				32BCB4BA27D1723000D22E3C /* Products */,
+				32BCB4D127D1730200D22E3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +65,74 @@
 		32BCB4BB27D1723000D22E3C /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				32BCB4BC27D1723000D22E3C /* AppDelegate.swift */,
-				32BCB4BE27D1723000D22E3C /* SceneDelegate.swift */,
-				32BCB4C027D1723000D22E3C /* ViewController.swift */,
-				32BCB4C227D1723000D22E3C /* Main.storyboard */,
-				32BCB4C527D1723200D22E3C /* Assets.xcassets */,
-				32BCB4C727D1723200D22E3C /* LaunchScreen.storyboard */,
-				32BCB4CA27D1723200D22E3C /* Info.plist */,
+				32BCB4D027D172FD00D22E3C /* Contacts.entitlements */,
+				32BCB4D727D1735300D22E3C /* Controllers */,
+				32BCB4D627D1734900D22E3C /* Models */,
+				32BCB4D527D1733400D22E3C /* Storyboards */,
+				32BCB4D427D1732A00D22E3C /* Resources */,
 			);
 			path = Contacts;
+			sourceTree = "<group>";
+		};
+		32BCB4D127D1730200D22E3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32BCB4D227D1730200D22E3C /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32BCB4D427D1732A00D22E3C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				32BCB4BC27D1723000D22E3C /* AppDelegate.swift */,
+				32BCB4BE27D1723000D22E3C /* SceneDelegate.swift */,
+				32BCB4C527D1723200D22E3C /* Assets.xcassets */,
+				32BCB4CA27D1723200D22E3C /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		32BCB4D527D1733400D22E3C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				32BCB4C227D1723000D22E3C /* Main.storyboard */,
+				32BCB4C727D1723200D22E3C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		32BCB4D627D1734900D22E3C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32BCB4D827D1752600D22E3C /* Contact.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32BCB4D727D1735300D22E3C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				32BCB4DC27D17BE000D22E3C /* ModelController */,
+				32BCB4DF27D17BFE00D22E3C /* ViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		32BCB4DC27D17BE000D22E3C /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				32BCB4DA27D17BDA00D22E3C /* ContactController.swift */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		32BCB4DF27D17BFE00D22E3C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				32BCB4DD27D17BFA00D22E3C /* ContactListTableViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32BCB4C127D1723000D22E3C /* ViewController.swift in Sources */,
+				32BCB4D927D1752600D22E3C /* Contact.swift in Sources */,
 				32BCB4BD27D1723000D22E3C /* AppDelegate.swift in Sources */,
+				32BCB4DB27D17BDB00D22E3C /* ContactController.swift in Sources */,
+				32BCB4DE27D17BFA00D22E3C /* ContactListTableViewController.swift in Sources */,
 				32BCB4BF27D1723000D22E3C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,10 +357,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Contacts/Contacts.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7268W7R8AK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Contacts/Info.plist;
+				INFOPLIST_FILE = Contacts/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -301,7 +373,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Emily.Contacts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ea.contacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -314,10 +386,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Contacts/Contacts.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7268W7R8AK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Contacts/Info.plist;
+				INFOPLIST_FILE = Contacts/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -328,7 +402,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Emily.Contacts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ea.contacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
