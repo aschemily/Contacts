@@ -8,82 +8,90 @@
 import UIKit
 
 class ContactListTableViewController: UITableViewController {
-
+    var refresh: UIRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       loadData()
+    }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
+    }
+    
+    
+    //load data
+    func loadData(){
+        ContactController.shared.fetchContacts { success in
+            if success{
+                print("fetching contacts")
+                self.updateViews()
+            }else{
+                print("error")
+            }
+        }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+
+    func updateViews(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return ContactController.shared.contacts.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        let contact = ContactController.shared.contacts[indexPath.row]
+        
+        cell.textLabel?.text = contact.name
+        cell.detailTextLabel?.text = contact.phone
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        if editingStyle == .delete{
+            let contactToDelete = ContactController.shared.contacts[indexPath.row]
+            guard let index = ContactController.shared.contacts.firstIndex(of: contactToDelete) else {return}
+            
+            ContactController.shared.delete(contactToDelete) { success in
+                if success{
+                    ContactController.shared.contacts.remove(at: index)
+                    DispatchQueue.main.async {
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                    }
+                }
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
+    
+    
+ 
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        //IIDOO
+        //identifier
+        if segue.identifier == "toContactDetailVC",
+         //index path and destination
+          let indexPath = tableView.indexPathForSelectedRow,
+          let destination = segue.destination as? ContactDetailViewController{
+            //object to send
+            let contactObject = ContactController.shared.contacts[indexPath.row]
+            
+            //object to receive
+            destination.contact = contactObject
+        
+        }
+      
     }
-    */
 
-}
+
+}//end of class

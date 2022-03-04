@@ -16,6 +16,7 @@
 		32BCB4D927D1752600D22E3C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCB4D827D1752600D22E3C /* Contact.swift */; };
 		32BCB4DB27D17BDB00D22E3C /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCB4DA27D17BDA00D22E3C /* ContactController.swift */; };
 		32BCB4DE27D17BFA00D22E3C /* ContactListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCB4DD27D17BFA00D22E3C /* ContactListTableViewController.swift */; };
+		32BCB4E327D25FF400D22E3C /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCB4E227D25FF400D22E3C /* ContactDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		32BCB4D827D1752600D22E3C /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		32BCB4DA27D17BDA00D22E3C /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
 		32BCB4DD27D17BFA00D22E3C /* ContactListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableViewController.swift; sourceTree = "<group>"; };
+		32BCB4E227D25FF400D22E3C /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				32BCB4DD27D17BFA00D22E3C /* ContactListTableViewController.swift */,
+				32BCB4E227D25FF400D22E3C /* ContactDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				32BCB4D927D1752600D22E3C /* Contact.swift in Sources */,
 				32BCB4BD27D1723000D22E3C /* AppDelegate.swift in Sources */,
+				32BCB4E327D25FF400D22E3C /* ContactDetailViewController.swift in Sources */,
 				32BCB4DB27D17BDB00D22E3C /* ContactController.swift in Sources */,
 				32BCB4DE27D17BFA00D22E3C /* ContactListTableViewController.swift in Sources */,
 				32BCB4BF27D1723000D22E3C /* SceneDelegate.swift in Sources */,

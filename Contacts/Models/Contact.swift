@@ -18,14 +18,15 @@ struct ContactStrings{
 class Contact {
     //class properties
     var name: String
-    var email: String?
     var phone: String?
+    var email: String?
+    
     
     //cloudkit properties
     var recordID: CKRecord.ID
     var userReference: CKRecord.Reference?
     
-    init(name: String, email: String? = nil, phone: String? = nil, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)){
+    init(name: String, phone: String? = nil, email: String? = nil, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)){
         self.name = name
         self.email = email
         self.phone = phone
@@ -37,13 +38,14 @@ class Contact {
 extension Contact{
     convenience init?(ckRecord: CKRecord){
         guard let name = ckRecord[ContactStrings.nameKey] as? String,
-              let email = ckRecord[ContactStrings.emailKey] as? String,
-              let phone = ckRecord[ContactStrings.phoneKey] as? String
+              let phone = ckRecord[ContactStrings.phoneKey] as? String,
+              let email = ckRecord[ContactStrings.emailKey] as? String
+              
                     else {return nil}
         
      //   let userReference = ckRecord[ContactStrings.userReferenceKey] as? CKRecord.Reference
         
-        self.init(name: name, email: email, phone: phone, recordID: ckRecord.recordID)
+        self.init(name: name, phone: phone, email: email, recordID: ckRecord.recordID)
     }
 }
 
@@ -61,8 +63,9 @@ extension CKRecord{
         
         self.setValuesForKeys([
             ContactStrings.nameKey : contact.name,
-            ContactStrings.emailKey : contact.email,
-            ContactStrings.phoneKey : contact.phone
+            ContactStrings.phoneKey : contact.phone,
+            ContactStrings.emailKey : contact.email
+            
         ])
         
         

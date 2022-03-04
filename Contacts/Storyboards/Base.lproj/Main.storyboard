@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Contact List Table View Controller-->
         <scene sceneID="bl1-iq-fMd">
             <objects>
-                <tableViewController id="ekP-UB-rZA" sceneMemberID="viewController">
+                <tableViewController id="ekP-UB-rZA" customClass="ContactListTableViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Ss1-0t-tS0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Kdl-ye-5lv" detailTextLabel="msf-l5-7sG" rowHeight="73" style="IBUITableViewCellStyleSubtitle" id="4YF-QM-Omv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" textLabel="Kdl-ye-5lv" detailTextLabel="msf-l5-7sG" rowHeight="73" style="IBUITableViewCellStyleSubtitle" id="4YF-QM-Omv" customClass="ContactTableViewCell" customModule="Contacts" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4YF-QM-Omv" id="w2o-QC-bKz">
@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="26.086956521739133" y="-14.0625"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact Detail View Controller-->
         <scene sceneID="Xpk-oD-Fsy">
             <objects>
-                <viewController id="GWY-pD-PZt" sceneMemberID="viewController">
+                <viewController id="GWY-pD-PZt" customClass="ContactDetailViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JTl-vd-Hwe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,8 +118,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sVu-VV-ch4">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KHx-rb-C2T"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KHx-rb-C2T">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="GWY-pD-PZt" id="sxS-dq-xLC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="YXV-oM-gVl" id="RTb-Z9-LDs"/>
+                        <outlet property="nameTextField" destination="c0H-G2-AhF" id="CaC-3F-bUt"/>
+                        <outlet property="numberTextField" destination="rjC-Y4-QzY" id="Ifb-hp-9Rx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kv-CH-4br" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
