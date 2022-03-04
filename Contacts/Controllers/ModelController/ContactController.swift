@@ -135,13 +135,5 @@ class ContactController{
         //step 1 add operation to database
         publicDB.add(operation)
     }
-    
-    
-    
-    
-    
-    
-    
- 
-    
+
 }//end of class

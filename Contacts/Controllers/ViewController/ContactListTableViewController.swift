@@ -20,18 +20,15 @@ class ContactListTableViewController: UITableViewController {
         updateViews()
     }
     
-    
     //load data
     func loadData(){
         ContactController.shared.fetchContacts { success in
             if success{
-                print("fetching contacts")
                 self.updateViews()
             }else{
                 print("error")
             }
         }
-
     }
 
     func updateViews(){
@@ -71,9 +68,6 @@ class ContactListTableViewController: UITableViewController {
             }
         }
     }
-    
-    
- 
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

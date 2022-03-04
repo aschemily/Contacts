@@ -50,7 +50,6 @@ class ContactDetailViewController: UIViewController {
         if let contact = contact{
             ContactController.shared.update(contact: contact, name: name, phone: phone ?? "", email: email ?? "") { success in
                 if success{
-                    
                     self.goBack()
                 }
             }
@@ -61,10 +60,7 @@ class ContactDetailViewController: UIViewController {
                     self.goBack()
                 }
             }
-            
         }
-       
-
     }
     
 
